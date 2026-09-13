@@ -108,50 +108,43 @@
   }
   </script>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/red-hat-display-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="mockup-bar">
-    <div class="shell mockup-bar__inner">
-      <span class="status-dot" aria-hidden="true"></span>
-      <strong>Layout mock-up</strong>
-      <span>Line marking service page</span>
-      <span class="mockup-bar__meta">Approved service-page system · current copy</span>
-    </div>
-  </div>
 
-  <header class="site-header" data-header>
-    <div class="shell utility-nav">
-      <div class="utility-links">
-        <span>Brisbane · Sydney · Melbourne</span>
-        <span class="utility-divider" aria-hidden="true">|</span>
-        <a href="https://cotewell.com.au/our-story/">Our story</a>
-        <a href="https://cotewell.com.au/video-gallery/">Testimonials</a>
-        <a href="https://cotewell.com.au/video-gallery/">Case studies</a>
-        <a href="https://cotewell.com.au/learning-centre/">Learning centre</a>
-        <a href="https://cotewell.com.au/how-can-we-help/">How can we help?</a>
-        <a class="utility-sample" href="https://cotewell.com.au/request-free-sample/">Free tape samples</a>
-      </div>
-      <div class="utility-contact">
-        <a href="tel:1300590505">1300 590 505</a>
-        <a href="mailto:enquiries@cotewell.com.au">enquiries@cotewell.com.au</a>
+  <header class="site-header" data-header data-site-header>
+    <div class="utility">
+      <div class="shell utility__inner">
+        <div class="utility__links">
+          <a href="https://cotewell.com.au/our-story/">About Us</a>
+          <div class="learning-menu">
+            <button type="button" aria-expanded="false">Learning Centre</button>
+            <div class="submenu">
+              <a href="https://cotewell.com.au/learning-centre/#articles">Articles</a>
+              <a href="https://cotewell.com.au/video-gallery/">Case studies</a>
+              <a href="https://cotewell.com.au/video-gallery/">Videos</a>
+            </div>
+          </div>
+          <a href="https://cotewell.com.au/request-free-sample/">Free Tape Samples</a>
+        </div>
+        <div class="utility__contact">
+          <a href="tel:1300590505">1300 590 505</a>
+          <a href="mailto:enquiries@cotewell.com.au">enquiries@cotewell.com.au</a>
+        </div>
       </div>
     </div>
     <div class="shell main-nav">
       <a class="brand" href="https://cotewell.com.au/" aria-label="Cotewell home">
-        <img class="brand-logo" src="assets/img/cotewell-logo.jpeg" alt="Cotewell" width="134" height="150">
+        <img src="assets/media/cotewell-logo.jpeg" alt="Cotewell">
       </a>
-      <nav class="primary-nav" aria-label="Primary navigation">
-        <a href="https://cotewell.com.au/service/floor-coating-and-sealing/">Floor coating</a>
-        <a href="https://cotewell.com.au/service/line-markings/" aria-current="page">Line marking</a>
-        <a href="https://cotewell.com.au/industrial-floor-resurfacing/">Floor resurfacing</a>
-        <a href="https://cotewell.com.au/product-category/tape/">Tape &amp; shapes</a>
+      <nav class="primary" id="primary-menu" aria-label="Primary navigation">
+        <a href="https://cotewell.com.au/service/floor-coating-and-sealing/">Floor Coating</a>
+        <a href="https://cotewell.com.au/service/line-markings/">Line Marking</a>
         <a href="https://cotewell.com.au/product-category/line-marking-projector/">Projectors</a>
-        <a href="https://cotewell.com.au/cost-calculator/">Cost calculator</a>
+        <a href="https://cotewell.com.au/product-category/tape/">Line Marking Tape</a>
+        <a href="https://cotewell.com.au/cost-calculator/">Pricing</a>
       </nav>
       <div class="nav-actions">
         <a class="cart-link" href="https://cotewell.com.au/cart/" aria-label="Cart, 0 items">
@@ -241,6 +234,22 @@
             <div class="system-row" role="row"><strong>Cold applied plastic</strong><span>High-wear areas</span><span>A robust long-term option</span><a class="system-row__cta" href="#quote">Get a quote <span>↓</span></a></div>
           </div>
           <a class="button button--red" href="#quote">Discuss your site <span>↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper cap-section reveal" id="cap">
+      <div class="shell cap-grid">
+        <div class="cap-header">
+          <p class="eyebrow eyebrow--dark"><span></span></p>
+          <h2>COLD APPLIED PLASTIC (CAP).</h2>
+        </div>
+        <div class="cap-text-left">
+          <p>CAP is a two-part resin that is trowelled or extruded onto the floor at a far greater thickness than paint, then cures chemically into a hard-wearing layer bonded to the concrete. That thickness is the point: it takes the abrasion of forklift tyres scrubbing through a turn, resists oils, wash-down chemicals and hot tyre pickup, and stays legible on rough or previously patched slabs where thinner systems fail early.</p>
+          <a class="button button--red" href="#quote">Request a site assessment <span>↗</span></a>
+        </div>
+        <div class="cap-text-right">
+          <p>It suits lines, hatching, symbols and lettering, can be laid with an anti-slip aggregate where grip matters, and is worth costing over its service life rather than per metre. Individual sections can be lifted and re-laid as the layout changes, so a single worn intersection does not force a full remark.</p>
         </div>
       </div>
     </section>
@@ -433,12 +442,58 @@
 
   <footer class="site-footer">
     <div class="shell footer-grid">
-      <div><a class="brand brand--footer" href="https://cotewell.com.au/"><img class="brand-logo brand-logo--footer" src="assets/img/cotewell-logo.jpeg" alt="Cotewell" width="134" height="150"></a><p>Line marking systems planned around safer, better organised workplaces.</p></div>
-      <div><strong class="mono">Line marking</strong><a href="https://cotewell.com.au/service/line-markings/">Supply and installation</a><a href="https://cotewell.com.au/product-category/tape/">Tape and shapes</a><a href="https://cotewell.com.au/product-category/line-marking-projector/">Projected marking</a></div>
-      <div><strong class="mono">Buyer resources</strong><a href="https://cotewell.com.au/request-free-sample/">Request a free sample</a><a href="https://cotewell.com.au/learning-centre/">Learning centre</a><a href="https://cotewell.com.au/how-can-we-help/">How can we help?</a></div>
-      <div><strong class="mono">Contact</strong><a href="tel:1300590505">1300 590 505</a><a href="mailto:enquiries@cotewell.com.au">enquiries@cotewell.com.au</a><a href="https://cotewell.com.au/request-quote/">Request a Quote</a></div>
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="https://cotewell.com.au/"><img class="brand-logo brand-logo--footer" src="assets/media/cotewell-logo.jpeg" alt="Cotewell" width="134" height="150"></a>
+        <p>Industrial flooring, line marking and<br>workplace safety solutions for industrial sites.</p>
+        <div class="footer-contact">
+          <a href="tel:1300590505">1300 590 505</a>
+          <a href="mailto:enquiries@cotewell.com.au">enquiries@cotewell.com.au</a>
+        </div>
+      </div>
+      <div>
+        <strong class="mono">SERVICES</strong>
+        <a href="https://cotewell.com.au/service/floor-coating-and-sealing/">Floor Coating</a>
+        <a href="https://cotewell.com.au/service/line-markings/">Line Marking</a>
+        <a href="https://cotewell.com.au/product-category/line-marking-projector/">Projectors</a>
+        <a href="https://cotewell.com.au/concrete-repair/">Concrete Repair</a>
+      </div>
+      <div>
+        <strong class="mono">SHOP</strong>
+        <a href="https://cotewell.com.au/product-category/tape/">Line Marking Tape</a>
+        <a href="https://cotewell.com.au/product-category/shapes/">5S Shapes & Footprints</a>
+        <a href="https://cotewell.com.au/product-category/signage/">Floor Signage</a>
+        <a href="https://cotewell.com.au/request-free-sample/">Free Samples</a>
+      </div>
+      <div>
+        <strong class="mono">COMPANY</strong>
+        <a href="https://cotewell.com.au/our-story/">About Us</a>
+        <a href="https://cotewell.com.au/learning-centre/#articles">Articles</a>
+        <a href="https://cotewell.com.au/video-gallery/">Case Studies</a>
+        <a href="https://cotewell.com.au/video-gallery/">Videos</a>
+        <a href="https://cotewell.com.au/request-free-sample/">Free Tape Samples</a>
+      </div>
+      <div>
+        <strong class="mono">WHERE WE WORK</strong>
+        <a href="#">Brisbane & QLD</a>
+        <a href="#">Sydney & NSW</a>
+        <a href="#">Melbourne & VIC</a>
+        <a href="https://cotewell.com.au/cost-calculator/">Cost Guide</a>
+        <a href="#">Common Questions</a>
+      </div>
     </div>
-    <div class="shell footer-bottom"><span>© 2026 Cotewell</span><span>Line marking service page mock-up</span></div>
+    <div class="shell footer-socials">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+    </div>
+    <div class="shell footer-bottom">
+      <span>© 2026 Cotewell.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
   </footer>
 
   <aside class="sticky-cta" data-sticky-cta aria-label="Line marking quick actions" aria-hidden="true">
