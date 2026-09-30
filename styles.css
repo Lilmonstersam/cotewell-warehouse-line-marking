@@ -1102,12 +1102,7 @@ h3 {
   font-size: 16px;
 }
 
-.system-row:nth-child(even) {
-  background: var(--red);
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.system-row:nth-child(odd):not(.system-row--head) {
+.system-row:not(.system-row--head) {
   background: #17191b;
 }
 
@@ -1568,7 +1563,7 @@ h3 {
 
 .grillex-facts {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   border-block: 1px solid var(--line-light);
   margin-bottom: 28px;
 }
@@ -1580,12 +1575,14 @@ h3 {
 .grillex-facts strong {
   display: block;
   font-family: "Big John";
-  font-size: 22px;
+  font-size: 15px;
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
 
 .grillex-facts span {
   color: var(--muted-light);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .faq-grid {
@@ -3332,5 +3329,315 @@ h3 {
   .cap-text-right {
     grid-column: 1;
     grid-row: 3;
+  }
+}
+
+/* ------------------------------------------------- line marking solutions
+   Mirrors the homepage "What We Do" block: white section, grey text tiles and
+   photo tiles in a checkerboard. Each column is one system; subgrid keeps the
+   two rows level across columns. */
+.solutions-section {
+  background: var(--white);
+  color: #111;
+}
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  gap: 15px;
+}
+
+.solution {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  gap: 15px;
+}
+
+.solution__body {
+  grid-row: 1;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 26px;
+  background: #f6f6f6;
+  padding: 24px 22px;
+}
+
+.solution__media {
+  grid-row: 2;
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  background: #e8e5df;
+}
+
+.solution:nth-child(even) .solution__body {
+  grid-row: 2;
+}
+
+.solution:nth-child(even) .solution__media {
+  grid-row: 1;
+}
+
+.solution__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 450ms ease;
+}
+
+.solution:hover .solution__media img {
+  transform: scale(1.035);
+}
+
+.solution--recommended .solution__body {
+  box-shadow: inset 0 4px 0 var(--red);
+}
+
+.solution__tag {
+  display: inline-block;
+  margin: 0 0 18px;
+  border: 1px solid var(--line-dark);
+  padding: 6px 9px;
+  color: var(--muted-dark);
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.solution--recommended .solution__tag {
+  border-color: var(--red);
+  background: var(--red);
+  color: var(--white);
+}
+
+.solution h3 {
+  margin: 0 0 12px;
+  font-size: clamp(20px, 1.55vw, 25px);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+}
+
+.solution__copy>p:not(.solution__tag) {
+  margin: 0 0 16px;
+  color: var(--muted-dark);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.solution ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line-dark);
+}
+
+.solution li {
+  border-bottom: 1px solid var(--line-dark);
+  padding: 8px 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.solution .button {
+  align-self: flex-start;
+}
+
+@media (max-width: 1240px) {
+  .solution-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .solution {
+    grid-row: auto;
+    grid-template-rows: none;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .solution__body,
+  .solution:nth-child(even) .solution__media {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .solution__media,
+  .solution:nth-child(even) .solution__body {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .solution__body {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 680px) {
+  .solution {
+    grid-template-columns: 1fr;
+  }
+
+  .solution__media,
+  .solution:nth-child(even) .solution__media {
+    grid-row: 1;
+    grid-column: 1;
+    min-height: 240px;
+  }
+
+  .solution__body,
+  .solution:nth-child(even) .solution__body {
+    grid-row: 2;
+    grid-column: 1;
+    min-height: 0;
+    padding: 24px;
+  }
+}
+
+/* ------------------------------------------------- options table: recommended vs also available
+   Tape and projected marking lead. Rows are grouped and weighted explicitly
+   rather than striped by nth-child, which used to paint random rows red. */
+.system-table .system-row {
+  grid-template-columns: .9fr 1.05fr 1.25fr 158px;
+}
+
+.system-table .system-row--group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 0;
+  background: transparent;
+  padding-top: 24px;
+  padding-bottom: 12px;
+  color: rgba(255, 255, 255, .86);
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.system-table .system-row--group::before {
+  content: "";
+  width: 28px;
+  height: 3px;
+  flex: 0 0 auto;
+  background: var(--red);
+}
+
+.system-table .system-row--group> :first-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.system-table .system-row--group-muted {
+  color: rgba(255, 255, 255, .56);
+}
+
+.system-table .system-row--group-muted::before {
+  background: rgba(255, 255, 255, .3);
+}
+
+.system-table .system-row--featured {
+  background: var(--red);
+  color: rgba(255, 255, 255, .95);
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.system-table .system-row--featured strong {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.system-table .system-row--standard {
+  color: rgba(255, 255, 255, .6);
+}
+
+.system-table .system-row--standard strong {
+  color: rgba(255, 255, 255, .84);
+}
+
+/* Corner-framed row CTAs: white fill on recommended rows, outline on the rest. */
+.system-table .system-row__cta {
+  justify-self: start;
+  justify-content: center;
+  min-height: 38px;
+  border: 1px solid rgba(255, 255, 255, .42);
+  padding: 9px 14px;
+  white-space: nowrap;
+  font-family: "Big John", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.system-table .system-row__cta:hover,
+.system-table .system-row__cta:focus-visible {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--black);
+}
+
+.system-table .system-row--featured .system-row__cta {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--black);
+}
+
+.system-table .system-row--featured .system-row__cta:hover,
+.system-table .system-row--featured .system-row__cta:focus-visible {
+  background: transparent;
+  color: var(--white);
+}
+
+.system-table .system-row--standard .system-row__cta {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+
+.system-table .system-row--standard .system-row__cta:hover,
+.system-table .system-row--standard .system-row__cta:focus-visible {
+  background: transparent;
+  border-color: rgba(255, 255, 255, .42);
+  color: var(--white);
+}
+
+@media (min-width: 681px) {
+  .system-table .system-row--featured> :first-child {
+    border-right-color: rgba(255, 255, 255, .28);
+  }
+}
+
+@media (max-width: 980px) {
+  .system-table .system-row {
+    grid-template-columns: .9fr 1fr 1.2fr 150px;
+  }
+}
+
+@media (max-width: 680px) {
+  .system-table .system-row {
+    grid-template-columns: 1fr;
+  }
+
+  .system-table .system-row--featured {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .system-table .system-row__cta {
+    margin-top: 10px;
   }
 }
