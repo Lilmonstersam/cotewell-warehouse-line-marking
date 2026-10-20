@@ -26,6 +26,8 @@ The workflow in `.github/workflows/deploy.yml` deploys the repository root as a 
 
 Repository: <https://github.com/Lilmonstersam/cotewell-warehouse-line-marking>
 
+Live site: <https://lilmonstersam.github.io/cotewell-warehouse-line-marking/>
+
 In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The workflow requires the standard `pages: write` and `id-token: write` permissions already declared in the workflow file.
 
 ## Review-site safeguards
