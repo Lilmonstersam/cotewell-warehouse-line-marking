@@ -1755,107 +1755,73 @@ h3 {
 .quote-banner {
   display: grid;
   grid-template-columns: 1.1fr .9fr;
-  min-height: 450px;
-  align-items: stretch;
+  gap: 48px;
+  align-items: center;
+}
+
+.quote-banner__media {
+  display: flex;
+  justify-content: center;
+}
+
+.quote-banner .button--white {
+  color: var(--red);
+}
+
+.quote-banner .button--white:hover {
+  color: var(--white);
 }
 
 .quote-banner__copy {
-  align-self: center;
-  padding: 80px 54px 80px 0;
+  padding: 40px 0;
+}
+
+.quote-banner .eyebrow {
+  margin-bottom: 8px;
+}
+
+.quote-banner h2 {
+  font-size: clamp(30px, 3.4vw, 44px);
 }
 
 .quote-banner__intro {
-  max-width: 55ch;
-  margin: 22px 0 0;
+  max-width: 70ch;
+  margin: 12px 0 0;
   color: rgba(255, 255, 255, .85);
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .quote-banner__points {
-  display: grid;
-  gap: 10px;
-  margin: 32px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+  margin: 14px 0 0;
   padding: 0;
   list-style: none;
   color: var(--white);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .quote-banner__points li::before {
   content: "✓";
-  margin-right: 10px;
+  margin-right: 8px;
   font-weight: 800;
-}
-
-.quote-banner .contact-lines {
-  position: relative;
-  z-index: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 0 0 28px;
-}
-
-.quote-banner .contact-lines span {
-  color: var(--white);
-  font-size: 20px;
-  font-weight: 800;
-}
-
-.quote-banner .contact-lines a {
-  font-size: 15px;
-}
-
-.quote-banner__media {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 480px;
-  padding: 48px 0 48px 40px;
-  margin-right: calc((100vw - min(100vw - (var(--gutter) * 2), var(--shell))) / -2);
-  padding-right: calc((100vw - min(100vw - (var(--gutter) * 2), var(--shell))) / 2);
-}
-
-.quote-banner__media img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.quote-banner__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .55));
-}
-
-.quote-banner__media .button {
-  position: relative;
-  z-index: 1;
 }
 
 @media (max-width: 980px) {
   .quote-banner {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .quote-banner__copy {
-    padding-right: 0;
+    padding: 40px 0 24px;
   }
 
   .quote-banner__media {
-    min-height: 420px;
-    margin-inline: calc(var(--gutter) * -1);
-    padding: 40px var(--gutter);
+    padding-bottom: 40px;
   }
 }
 
@@ -2293,9 +2259,12 @@ h3 {
   .system-copy h2,
   .longevity-copy h2,
   .roi-grid h2,
-  .faq-intro h2,
-  .quote-banner h2 {
+  .faq-intro h2 {
     font-size: clamp(36px, 12vw, 54px);
+  }
+
+  .quote-banner h2 {
+    font-size: clamp(26px, 8vw, 34px);
   }
 
   .application {
